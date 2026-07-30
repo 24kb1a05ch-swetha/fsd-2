@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selectors Example</title>
+</head>
+<body>
+
+<h2 id="title">Welcome</h2>
+
+<p class="text">This is first paragraph.</p>
+<p class="text">This is second paragraph.</p>
+
+<button onclick="changeText()">Click Me</button>
+
+<script>
+function changeText() {
+    // Select by ID
+    document.getElementById("title").innerHTML = "Hello Student";
+
+    // Select by Class
+    document.getElementsByClassName("text")[0].innerHTML = "First paragraph changed.";
+
+    // Select by Tag Name
+    document.getElementsByTagName("p")[1].innerHTML = "Second paragraph changed.";
+}
+</script>
+
+</body>
+</html>
