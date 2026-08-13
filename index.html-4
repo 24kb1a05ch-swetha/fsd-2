@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Listener Example</title>
+</head>
+<body>
+
+    <h2>Event Listener Demonstration</h2>
+
+    <button id="clickButton">Click Me</button>
+    <br><br>
+
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <p id="output"></p>
+
+    <script>
+        // 1. Select the HTML elements
+        const button = document.getElementById("clickButton");
+        const input = document.getElementById("nameInput");
+        const output = document.getElementById("output");
+
+        // 2. Add a click event listener
+        button.addEventListener("click", function() {
+            output.textContent = "Button was clicked!";
+        });
+
+        // 3. Add a mouseover event listener
+        button.addEventListener("mouseover", function() {
+            button.style.backgroundColor = "lightgreen";
+        });
+
+        // 4. Add a mouseout event listener
+        button.addEventListener("mouseout", function() {
+            button.style.backgroundColor = "";
+        });
+
+        // 5. Add a keydown event listener
+        input.addEventListener("keydown", function(event) {
+            console.log("Key pressed: " + event.key);
+        });
+
+        // 6. Add an input event listener
+        input.addEventListener("input", function() {
+            output.textContent = "Hello, " + input.value;
+        });
+    </script>
+
+</body>
+</html>
