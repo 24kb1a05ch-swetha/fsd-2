@@ -1,0 +1,32 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Event Listener Example</title> 
+</head> 
+<body> 
+<h1>JavaScript Event Listener</h1> 
+<button id="click">Click me</button>
+<p id="result"></p>
+<input type="text" id="input">
+<p id="inputres"></p>
+<div id="hover" style="width: 200px;height:100px;background-color: lightblue;">
+    hover over this
+</div>
+<script> 
+document.getElementById("click").addEventListener("click",function(){
+    const text=document.getElementById("input").innervalue();
+    document.getElementById("result").innerText=text;
+});
+document.getElementById("input").addEventListener("input",function(event){
+    document.getElementById("inputres").innerText="you typed:"+event.target.value;
+});
+document.getElementById("hover").addEventListener("mouseover",function(){
+    this.style.backgroundColor="orange";
+});
+document.getElementById("hover").addEventListener("mouseout",function(){
+    this.style.backgroundColor="lightblue";
+});
+
+</script> 
+</body> 
+</html> 
