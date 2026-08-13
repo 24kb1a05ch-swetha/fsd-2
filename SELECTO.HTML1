@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selecting HTML Elements Using JavaScript</title>
+</head>
+<body>
+    <h1 id="heading">JavaScript Selectors</h1>
+
+    <p class="text">This is the first paragraph.</p>
+    <p class="text">This is the second paragraph.</p>
+
+    <div>
+        <p>This is a paragraph inside a div.</p>
+    </div>
+    <button id="myButton">Click Me</button>
+    <script>
+        const heading = document.getElementById("heading");
+        heading.style.color = "blue";
+        const paragraphs = document.getElementsByClassName("text");
+        paragraphs[0].style.color = "red";
+        paragraphs[1].style.color = "green";
+        const allParagraphs = document.getElementsByTagName("p");
+
+        for (let i = 0; i < allParagraphs.length; i++) {
+            allParagraphs[i].style.fontSize = "18px";
+        }
+        const firstParagraph = document.querySelector(".text");
+
+        firstParagraph.style.backgroundColor = "yellow";
+
+        const allTextParagraphs = document.querySelectorAll(".text");
+
+        allTextParagraphs.forEach(function(paragraph) {
+            paragraph.style.fontWeight = "bold";
+        });
+        const button = document.querySelector("#myButton");
+        button.style.backgroundColor = "lightblue";
+        button.style.padding = "10px";
+    </script>
+</body>
+</html>
