@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Event Handling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>JavaScript Event Listener Demonstration</h2>
+
+    <!-- Button Events -->
+    <button id="clickButton">Click Me</button>
+
+    <!-- Keyboard Event -->
+    <br>
+    <input type="text" id="textBox" placeholder="Type something">
+
+    <!-- Mouse Events -->
+    <div id="box">
+        Move the mouse over me
+    </div>
+
+    <!-- Form Event -->
+    <br>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter your name" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+
+    <script>
+
+        // Selecting HTML elements
+        const button = document.querySelector("#clickButton");
+        const textBox = document.querySelector("#textBox");
+        const box = document.querySelector("#box");
+        const form = document.querySelector("#myForm");
+        const nameInput = document.querySelector("#name");
+        const message = document.querySelector("#message");
+
+
+        // ------------------------------------------------
+        // 1. CLICK EVENT
+        // ------------------------------------------------
+
+        button.addEventListener("click", function() {
+            message.textContent = "The button was clicked!";
+        });
+
+
+        // ------------------------------------------------
+        // 2. MOUSEOVER EVENT
+        // ------------------------------------------------
+
+        box.addEventListener("mouseover", function() {
+            box.style.backgroundColor = "yellow";
+            box.textContent = "Mouse is over the box";
+        });
+
+
+        // ------------------------------------------------
+        // 3. MOUSEOUT EVENT
+        // ------------------------------------------------
+
+        box.addEventListener("mouseout", function() {
+            box.style.backgroundColor = "lightblue";
+            box.textContent = "Mouse left the box";
+        });
+
+
+        // ------------------------------------------------
+        // 4. KEYDOWN EVENT
+        // ------------------------------------------------
+
+        textBox.addEventListener("keydown", function(event) {
+            message.textContent =
+                "You pressed the key: " + event.key;
+        });
+
+
+        // ------------------------------------------------
+        // 5. INPUT EVENT
+        // ------------------------------------------------
+
+        textBox.addEventListener("input", function() {
+            message.textContent =
+                "You entered: " + textBox.value;
+        });
+
+
+        // ------------------------------------------------
+        // 6. FORM SUBMIT EVENT
+        // ------------------------------------------------
+
+        form.addEventListener("submit", function(event) {
+
+            // Prevent page from refreshing
+            event.preventDefault();
+
+            message.textContent =
+                "Form submitted successfully. Hello, "
+                + nameInput.value + "!";
+        });
+
+    </script>
+
+</body>
+</html>
