@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Button Click Events</h2>
+
+<button id="btn1">Click Me</button>
+<button id="btn2">Change Text</button>
+<button id="btn3">Show Message</button>
+
+<p id="text">Hello Student!</p>
+
+<script>
+document.getElementById("btn1").onclick = function() {
+    alert("Button 1 clicked!");
+};
+
+document.getElementById("btn2").onclick = function() {
+    document.getElementById("text").innerHTML = "Text Changed!";
+};
+
+document.getElementById("btn3").onclick = function() {
+    alert("Welcome to JavaScript!");
+};
+</script>
+
+</body>
+</html>
