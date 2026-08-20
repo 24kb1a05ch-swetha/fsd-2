@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Three Types of Functions</h2>
+
+<script>
+// 1. Function Declaration
+function add(a, b) {
+    return a + b;
+}
+
+// 2. Function Definition / Expression
+let sub = function(a, b) {
+    return a - b;
+};
+
+// 3. Arrow Function
+let mul = (a, b) => a * b;
+
+document.write("Addition = " + add(10, 5) + "<br>");
+document.write("Subtraction = " + sub(10, 5) + "<br>");
+document.write("Multiplication = " + mul(10, 5));
+</script>
+
+</body>
+</html>
