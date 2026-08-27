@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+
+// Define the class component by extending React.Component
+class CounterButton extends Component {
+  constructor(props) {
+    super(props);
+    
+    // 1. Initialize the state with a count of 0
+    this.state = {
+      count: 0
+    };
+  }
+
+  // 2. Define an arrow function to update state (avoids manual binding)
+  incrementCount = () => {
+    this.setState(prevState => ({
+      count: prevState.count + 1
+    }));
+  };
+
+  // 3. Render the UI
+  render() {
+    return (
+      <div style={{ textAlign: 'center', marginTop: '50px', fontFamily: 'Arial, sans-serif' }}>
+        <h2>React Class Component Counter</h2>
+        
+        {/* Display the current count from state */}
+        <p style={{ fontSize: '24px' }}>
+          Current Count: <strong>{this.state.count}</strong>
+        </p>
+        
+        {/* Button triggers the increment function on click */}
+        <button 
+          onClick={this.incrementCount}
+          style={{
+            padding: '10px 20px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            backgroundColor: '#007BFF',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px'
+          }}
+        >
+          Click Me to Increment
+        </button>
+      </div>
+    );
+  }
+}
+
+export default CounterButton;
